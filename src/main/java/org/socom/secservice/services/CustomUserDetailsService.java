@@ -35,9 +35,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
         Collection<GrantedAuthority> authorities = new ArrayList<>();
         if (appUser.getAppRoles() != null) {
-            appUser.getAppRoles().forEach(r -> {
-                authorities.add(new SimpleGrantedAuthority(r.getRoleName()));
-            });
+            appUser.getAppRoles().forEach(r -> authorities.add(new SimpleGrantedAuthority(r.getRoleName())));
         }
 
         // 2. Conversion et retour de l'objet UserDetails requis par Spring Security
