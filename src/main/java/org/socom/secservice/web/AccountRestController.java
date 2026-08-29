@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/account")
 public class AccountRestController {
-    private AccountService accountService;
+    private final AccountService accountService;
 
     public AccountRestController(AccountService accountService) {
         this.accountService = accountService;
