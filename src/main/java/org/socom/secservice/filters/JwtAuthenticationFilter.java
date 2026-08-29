@@ -18,6 +18,7 @@ import java.util.Date;
 import java.util.stream.Collectors;
 
 //@Component
+@SuppressWarnings("NullableProblems")
 public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
     //private AuthenticationManager authenticationManager;
@@ -27,7 +28,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         this.setFilterProcessesUrl("/api/auth/login");
     }
 
-
+    @SuppressWarnings("NullableProblems")
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
         System.out.println("attemptAuthentication");
